@@ -113,8 +113,7 @@
                                             numbersonly
                                         ) +
                                             operation *
-                                                (getCharacterIndex(cipherchar) +
-                                                    1),
+                                                getCharacterIndex(cipherchar),
                                         numbersonly
                                     ),
                                     numbersonly
@@ -150,8 +149,6 @@
                 >Password (key used to encrypt or decrypt):</label
             >
             <input type="text" id="cipher" name="cipher" /><br /><br />
-            <input type="checkbox" id="numbersonly" name="numbersonly" />
-            Numbers only for backup code and encrypted code<br /><br />
             <label for="plaintext">Backup Code (to encrypt):</label>
             <input type="text" id="plaintext" name="plaintext" />
             <input
@@ -159,8 +156,7 @@
                 value="Encrypt"
                 onclick="document.getElementById('ciphertext').value = computeCipher(document.getElementById('plaintext').value, 
                     document.getElementById('cipher').value, 
-                    false, 
-                    document.getElementById('numbersonly').checked);"
+                    false);"
             /><br /><br />
             <label for="ciphertext">Encrypted Code (to decrypt):</label>
             <input type="text" id="ciphertext" name="ciphertext" />
@@ -169,8 +165,7 @@
                 value="Decrypt"
                 onclick="document.getElementById('plaintext').value = computeCipher(document.getElementById('ciphertext').value, 
                     document.getElementById('cipher').value, 
-                    true, 
-                    document.getElementById('numbersonly').checked);"
+                    true);"
             />
         </form>
     </body>
